@@ -47,11 +47,11 @@ locals {
   }
 }
 resource "aws_s3_object" "website_contents" {
-  for_each     = fileset("../my_website", "**/*") #Uploads every file as its own object
+  for_each     = fileset("../my_website/", "**/*") #Uploads every file as its own object
   bucket       = data.aws_s3_bucket.main_bucket.id
   key          = each.key
   source       = "../my_website/${each.value}"
-  content_type = lookup(local.content_type_map, split(".", "../my_website/${each.value}")[1], "text/css")
+  content_type = lookup(local.content_type_map, split(".", each.value)[1], "text/css")
   etag         = filemd5("../my_website/${each.value}") #etag makes the file update when it changes- lets terraform recognize when content has changed
 }
 ##Bucket ACL
