@@ -3,7 +3,7 @@ variable "REGION" {
 }
 
 variable "lambda_fxn_name" {
-  default = "CRC-terra1"
+  default = "CRC-terra10"
 }
 
 variable "lambda_handler" {
