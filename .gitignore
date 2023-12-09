@@ -4,3 +4,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# .idea folder & .DS_Store
+.idea
+.DS_Store
