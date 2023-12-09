@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Andrea Peterson | Portfolio </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="description" content="Creative Agency Bootstrap Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Airspace Template v1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- Ionic Icon Css -->
+  <link rel="stylesheet" href="plugins/Ionicons/css/ionicons.min.css">
+  <!-- animate.css -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- Magnify Popup -->
+  <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="body">
+
+<!-- Header Start -->
+<header class="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<nav class="navbar navbar-expand-lg p-0">
+					<a class="navbar-brand" href="index.html">
+						<img src="images/logo.png" alt="Logo">
+					</a>
+
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="ion-android-menu"></span>
+					</button>
+
+					<div class="collapse navbar-collapse ml-auto" id="navbarsExample09">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.html">Home</a>
+							</li>
+							<li class="nav-item dropdown @@portfolio">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio <span class="ion-ios-arrow-down"></span></a>
+								<ul class="dropdown-menu" aria-labelledby="dropdown03">
+									<li><a class="dropdown-item @@portfolioFilter" href="portfolio.html">Projects</a></li>
+									<li><a class="dropdown-item @@portfolioSingle" href="portfolio-single.html">Resume</a></li>
+
+									<li class="dropdown dropdown-submenu dropright">
+										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button"
+											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Badges</a>
+
+										<ul class="dropdown-menu" aria-labelledby="dropdown0301">
+											<li><a class="dropdown-item" href="certificates.html">Certifications</a></li>
+											<li><a class="dropdown-item" href="badges.html">Trainings</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown @@blog">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Blog <span class="ion-ios-arrow-down"></span></a>
+								<ul class="dropdown-menu" aria-labelledby="dropdown05">
+									<li><a class="dropdown-item @@blogFW" href="https://dev.to/andreapeterson">My Blog</a></li>
+										</ul>
+									</li>
+							</li>
+							<li class="nav-item dropdown @@pages">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>
+								<ul class="dropdown-menu" aria-labelledby="dropdown05">
+									<li><a class="dropdown-item @@about" href="about.html">About Me</a></li>
+								</ul>
+							</li>
+							<li class="nav-item @@contact"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header><!-- header close -->
+
+<section class="page-title bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1><FONT COLOR=BLACK>Some of my latest projects.</FONT></h1>
+          <p>Don’t just take my word for it. Check out some of my latest work. For more information, click on the projects icon to access the project from my Github repositories. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Start -->
+<section class="portfolio-work">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="portfolio-menu">
+            <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons">
+              <label class="btn btn-sm btn-primary active">
+                <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+              </label>
+              <label class="btn btn-sm btn-primary">
+                <input type="radio" name="shuffle-filter" value="python" />Python
+              </label>
+              <label class="btn btn-sm btn-primary">
+                <input type="radio" name="shuffle-filter" value="aws" />AWS
+              </label>
+              <label class="btn btn-sm btn-primary">
+                <input type="radio" name="shuffle-filter" value="x" />xxxx
+              </label>
+            </div>
+          </div>
+          <div class="row shuffle-wrapper">
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;aws&quot;]">
+                <img src="images/portfolio/boto3.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Boto3" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Diving Into Boto3</a>
+                  <p>Utilizing Boto3 to automate tasks with EC2, AMI's, and EBS. </p>
+                </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/rental.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Rentals" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Automated Data Entry</a>
+                  <p>Combining BeautifulSoup and Selenium to scrape apartments.com and then fill out a Google Doc for each rentals price, link, and address, then we can easily convert this into a Google Sheet via Google Doc UI</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/twitter.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Twitter_Bot" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Automated Twitter Bot</a>
+                  <p>Using Selenium to gather data about current internet speed from speedtest.net and then logging onto Twitter and making a tweet about it.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/cookie.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Cookie_Clicker" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Automated Cookie Clicker</a>
+                  <p>Letting Selenium play the game for us</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/vacuum.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Amazon_Price_Tracker" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Amazon Price Tracker</a>
+                  <p>Beautiful soup, requests, and smtplib all working together to alert you if a product falls below price threshold. Personally, I have been eyeballing this dog brush vacuum!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/spotify.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Spotify_Playlist" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Spotify Playlist</a>
+                  <p>Using BeautifulSoup to webscrape Billboards Top 100 charts and Spotify's API to create a Spotify Playlist of the top 100 songs for any day of your choosing! </p>
+                </div>
+              </div>
+              </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/movie.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Top100_Movies" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Top 100 Movies</a>
+                  <p>Webscraping with Beautiful Soup to create a list of Empire's top 100 movies of all time, so on the next movie night, you're prepared :)</p>
+                </div>
+              </div>
+              </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/workout.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Workout_Tracker/tree/main" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Workout Tracker</a>
+                  <p>Utilizing API calls to Nutrionix and Sheety, you can track your workouts in Python and have them immediately uploaded onto Google Sheets.</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/milo.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/First_css" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Learning CSS</a>
+                  <p>Joining the basics of CSS with html, starring Mr.Milo!</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/firsthtml.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/First_html" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Learning HTML</a>
+                  <p>Just Playing around with the basics of html5- You're invited to my Birthday Party!</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/vit_tracker.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Vitamin_Tracker" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Vitamin Tracker</a>
+                  <p>Set up a vitamin tracker all by API using post, put, and delete requests (clearly I need to be more consistent with my vitamins!)</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;aws&quot;]">
+                <img src="images/portfolio/stock.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Stock_Alert" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Stock Market Emails</a>
+                  <p>With the lovely Lambda, SNS, and CloudWatch Events(a true power team), a trigger will go off every day at 8 a.m. and if the stock price difference of Amazon is greater than 5%, SNS will email the subscribers the top 3 news articles involving Amazon(sourced from APIs).</p>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/weather_sms.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Weather_SMS" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Weather SMS</a>
+                  <p>Utilizing API calls, start your morning off with a text if it is forecasted to rain :)</p>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/quiz2.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/QuizGame" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Updated Quiz Game!</a>
+                  <p>Added a fresh GUI class to enhance user experience and updated API call with parameters + html.unenscape to clean data. New 10 T/F questions every time you play!</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;aws&quot;]">
+                <img src="images/portfolio/monday.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/AWSLambda-SMTPLIB-Python" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Send Automated Emails Through Lambda</a>
+                  <p>With Python & smtplib, receive a motivational quote every Monday at 8 a.m. and also never miss saying Happy Birthday again</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/flash.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Flash_Cards" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Spanish Flash Cards</a>
+                  <p>Come practice the 100 most frequent Spanish words, vamos!</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/password.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Password_manager" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Password Manager</a>
+                  <p>Save your passwords all in one place, that being a json file.</p>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/pomodoro.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Pomodoro" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Pomodoro</a>
+                  <p>A Pomodoro timer to help you work hard with scheduled breaks as rewards.</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/crossing.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Turtle-Crossing" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Turtle Crossing</a>
+                  <p>Get your turtle across the road without hitting any road blocks! Each time you make it across, you go to the next level where the blocks move faster until you hit a block or jump out of bounds.</p>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/capitals.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/U.S.-Capitals-Game" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Capitals Game</a>
+                  <p>Refresh your knowledge on the U.S. capitals with this interactive code.</p>
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/snake.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/SnakeGame" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Snake Game</a>
+                  <p>Collect as many food pieces as you can without running into the wall or yourself to grow your snake.</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+                <img src="images/portfolio/pong.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Pong-Game" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Pong Game</a>
+                  <p>Play pong against a friend or against yourself! Orange versus Blue (go gators!).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/hirst.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/HirstPainting" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Hirst Painting</a>
+                  <p>Don't have $19 million dollars to spare for a Hirst Spot Painting? That's okay, me neither. Luckily, Python can make one for us.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/t-race.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/turtle_race" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Turtle Race</a>
+                  <p>Bid on which turtle you think will win!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/etch.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/EtchASketch" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Etch A Sketch</a>
+                  <p>Yes, the childhood classic. Draw anything with just 4 keys.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/Blackjack.png" class="me"/>
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/BlackJack-Game" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Blackjack Game</a>
+                  <p>Just like you are at a casino (almost).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/calculator.png" class="me">
+              <div class="portfolio-hover">
+                <div class="portfolio-content">
+                  <a href="https://github.com/andreapeterson/Calculator" ><i class="icon ion-search"></i></a>
+                  <a class="h3">Calculator</a>
+                  <p>In need of a calculator? Look no further. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+              <img src="images/portfolio/GuessNumber.png" class="me"/>
+            <div class="portfolio-hover">
+              <div class="portfolio-content">
+                <a href="https://github.com/andreapeterson/GuessMyNumber-Game" ><i class="icon ion-search"></i></a>
+                <a class="h3">Guess My Number</a>
+                <p>Can you guess the exact number the computer picks? What about in hard mode?</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+            <img src="images/portfolio/higherlower.png" class="me"/>
+            <div class="portfolio-hover">
+              <div class="portfolio-content">
+                <a href="https://github.com/andreapeterson/Higher-Lower-Game" ><i class="icon ion-search"></i></a>
+                <a class="h3">Higher Lower</a>
+                <p>A game where you are given two people and you chose who you think has more followers on Instagram. Beware: it keeps score.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+            <img src="images/portfolio/quizgame.png" class="me">
+            <div class="portfolio-hover">
+              <div class="portfolio-content">
+                <a href="https://github.com/andreapeterson/QuizGame" ><i class="icon ion-search"></i></a>
+                <a class="h3">Quiz Game</a>
+                <p>Calling all trivia lovers! </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item" data-groups="[&quot;python&quot;]">
+            <img src="images/portfolio/doggame2.png" class="me">
+            <div class="portfolio-hover">
+              <div class="portfolio-content">
+                <a href="https://github.com/andreapeterson/Dog-Game" ><i class="icon ion-search"></i></a>
+                <a class="h3">Dog Game</a>
+                <p>You choose your destiny.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Portfolio End -->
+
+<!-- footer Start -->
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer-manu">
+					<ul>
+						<li><a href="about.html"><FONT COLOR=#6B4D3C>About Me</FONT></a></li>
+						<li><a href="contact.html"><FONT COLOR=#6B4D3C>Contact Me</FONT></a></li>
+					</ul>
+				</div>
+				<p class="copyright mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; Designed & Developed by <a
+						href="http://www.themefisher.com">Themefisher</a>. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!--Scroll to top-->
+<div id="scroll-to-top" class="scroll-to-top">
+	<span class="icon ion-ios-arrow-up"></span>
+</div>
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- filter -->
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="plugins/google-map/map.js"></script>
+
+    <script src="js/script.js"></script>
+
+    </body>
+
+    </html>

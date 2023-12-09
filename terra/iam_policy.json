@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+
+            "Resource": "arn:aws:logs:arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "lambda:InvokeFunctionUrl",
+            "Resource": "arn:aws:lambda:*:*:*"
+        },
+      {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:UpdateItem",
+                "dynamodb:PutItem"
+            ],
+            "Resource": "arn:aws:dynamodb:*:*:*"
+        }
+    ]
+}
