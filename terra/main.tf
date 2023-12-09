@@ -47,12 +47,12 @@ locals {
   }
 }
 resource "aws_s3_object" "website_contents" {
-  for_each = fileset("/Users/andrea/Documents/AWS/CRC/my_website", "**/*") #Uploads every file as its own object
-  bucket   = data.aws_s3_bucket.main_bucket.id
-  key      = each.key
-  source   = "/Users/andrea/Documents/AWS/CRC/my_website/${each.value}"
-  content_type = lookup(local.content_type_map, split(".", "/Users/andrea/Documents/AWS/CRC/my_website/${each.value}")[1], "text/css")
-  etag = filemd5("/Users/andrea/Documents/AWS/CRC/my_website/${each.value}") #etag makes the file update when it changes- lets terraform recognize when content has changed
+  for_each     = fileset("../my_website", "**/*") #Uploads every file as its own object
+  bucket       = data.aws_s3_bucket.main_bucket.id
+  key          = each.key
+  source       = "../my_website/${each.value}"
+  content_type = lookup(local.content_type_map, split(".", "../my_website/${each.value}")[1], "text/css")
+  etag         = filemd5("../my_website/${each.value}") #etag makes the file update when it changes- lets terraform recognize when content has changed
 }
 ##Bucket ACL
 resource "aws_s3_bucket_ownership_controls" "acl" {
@@ -83,7 +83,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_root_object = "index.html"
   is_ipv6_enabled     = true
   enabled             = true
-  aliases = ["andrea-peterson.com"] #alternate cname
+  aliases             = ["andrea-peterson.com"] #alternate cname
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]

@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket                  = "terra444"
-    key                     = "my-terraform-project"
-    region                  = "us-east-1"
+    bucket = "terra444"
+    key    = "my-terraform-project"
+    region = "us-east-1"
   }
 }
 
