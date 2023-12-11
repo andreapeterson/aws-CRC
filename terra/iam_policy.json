@@ -20,7 +20,8 @@
             "Effect": "Allow",
             "Action": [
                 "dynamodb:UpdateItem",
-                "dynamodb:PutItem"
+                "dynamodb:PutItem",
+                "dynamodb:GetItem"
             ],
             "Resource": "arn:aws:dynamodb:*:*:*"
         }
