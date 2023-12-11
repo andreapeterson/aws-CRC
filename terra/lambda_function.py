@@ -6,6 +6,7 @@ table_name = os.environ['table_name']
 client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
+    global num_views
     try:
         response = client.get_item(
             TableName=table_name,
@@ -33,5 +34,5 @@ def lambda_handler(event, context):
             )
 
             num_views = int(response['Attributes']['Views']['N'])
-
+    finally:
         return num_views
