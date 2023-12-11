@@ -1782,7 +1782,7 @@ ul.dropdown-menu li {
   float: left;  /* Use float: left; to make images float to the left */
   margin-right: 20px; /* Adjust the spacing between images */
   margin-bottom: 20px; /* Adjust the spacing between images and text */
-  width: 150px; /* Set the width of the images */
+  width: 250px; /* Set the width of the images */
   height: 330px; /* Maintain the aspect ratio */
 }
 
