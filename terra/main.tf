@@ -223,6 +223,20 @@ resource "aws_lambda_function_url" "fxn_url" {
     allow_origins     = ["https://andrea-peterson.com"]
   }
 }
+##For updating my_website/index.js with function url
+resource "null_resource" "edit_file" {
+  provisioner "local-exec" {
+    command = <<EOF
+      sed -i.bak "s|URL_REPLACE_PLACEHOLDER|${aws_lambda_function_url.fxn_url.function_url}|" ../my_website/index.js
+    EOF
+  }
+
+  triggers = {
+    always_run = timestamp()
+  }
+
+  depends_on = [aws_lambda_function_url.fxn_url]
+}
 
 # FOR DYNAMODB
 ##Creating table
