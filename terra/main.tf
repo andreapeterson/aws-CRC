@@ -97,7 +97,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
       }
     }
     viewer_protocol_policy = "redirect-to-https"
-    #Cache behavior
+    #Cache behavior - based off managed caching optimized policy
     min_ttl     = 1
     default_ttl = 86400
     max_ttl     = 31536000
