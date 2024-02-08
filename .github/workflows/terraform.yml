@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - stage
+      - test
   pull_request:
     branches:
       - main
