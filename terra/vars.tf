@@ -13,5 +13,3 @@ variable "lambda_handler" {
 variable "dynamo_fxn_name" {
   default = "CRC-terra"
 }
-
-##
