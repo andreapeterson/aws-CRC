@@ -2,85 +2,60 @@ name: 'Terraform Deploy to AWS'
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - stage
+    paths:
+      - terra/**
   pull_request:
+    branches:
+      - main
+    paths:
+      - terra/**
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  ROOT_PATH: ${{ github.workspace }}/terra
 
 jobs:
   terraform:
     name: 'Terraform'
-    permissions: write-all
     runs-on: ubuntu-latest
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
+        working-directory: ./terraform
 
     steps:
-    # Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v3
-      with:
-        terraform_version: 1.1.9
-        terraform_wrapper: true
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      run: terraform init
-      working-directory: ${{env.ROOT_PATH}}
+      - name: Terraform init
+        id: init
+        run: terraform init -backend-config="bucket"=$BUCKET_TF_STATE
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-      continue-on-error: true
-      working-directory: ${{env.ROOT_PATH}}
+      - name: Terraform fmt
+        run: terraform fmt -check
+        continue-on-error: true
 
-    # Generates an execution plan for Terraform
-    - name: Terraform Plan
-      run: terraform plan -input=false
-      working-directory: ${{env.ROOT_PATH}}
+      - name: Terraform validate
+        id: validate
+        run: terraform validate
 
-    # Add a comment to pull requests with plan results
-    - name: add-plan-comment
-      uses: actions/github-script@v6
-      if: github.event_name == 'pull_request'
-      env:
-        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-          #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-          #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
-          #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-      
-          <details><summary>Show Plan</summary>
-          
-          \`\`\`${process.env.PLAN}\`\`\`
-          
-          </details>
-          
-          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
-            
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: output
-          })
+      - name: Terraform plan
+        id: plan
+        run: terraform plan -no-color -input=false -out planfile #storing output in this file and using it to apply changes - avoids bug of parallel execution
+        continue-on-error: true
 
-      # On push to "main", build or change infrastructure according to Terraform configuration files
-      # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
-    - name: Terraform Apply
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false
-      working-directory: ${{env.ROOT_PATH}}
+      - name: Terraform plan status - fail
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false -parallelism=1 planfile
+
