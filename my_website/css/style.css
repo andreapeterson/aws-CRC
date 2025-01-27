@@ -890,27 +890,72 @@ ul.dropdown-menu li {
   margin-top: 30px;
 }
 
+/* Service section */
 .service {
   text-align: center;
   padding: 90px 0;
 }
+
+/* Service item container */
 .service .service-item {
+  position: relative;
   padding-bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }
+
+/* Icon styling */
 .service .service-item i {
   font-size: 60px;
   color: #6e819e;
 }
+
+/* Header styling */
 .service .service-item h4 {
   padding-top: 15px;
   margin: 0;
   font-weight: 500;
   text-transform: uppercase;
 }
+
+/* Paragraph styling */
 .service .service-item p {
   padding-top: 10px;
   margin: 0;
 }
+
+/* Snowflake Image */
+.service .snowflake {
+  width: 100px;   /* Set snowflake width */
+  height: auto;   /* Maintain aspect ratio */
+  object-fit: contain;
+}
+
+/* Adjust snowflake size for different screen sizes */
+@media (max-width: 767px) {
+  .service .snowflake {
+    width: 80px;  /* Reduce snowflake size on smaller screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .service .snowflake {
+    width: 200px; /* Larger snowflake on larger screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .service .snowflake {
+    width: 200px; /* Even larger snowflake on large screens */
+  }
+}
+
+
+
+
 
 .dark-service .title {
   color: #fff;
@@ -2688,3 +2733,4 @@ ion-icon {
     display: block; /* Ensure proper spacing and alignment */
     margin: 0 auto; /* Center the image within its container */
 }
+
