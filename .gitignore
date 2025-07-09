@@ -8,3 +8,6 @@
 # .idea folder & .DS_Store
 .idea
 .DS_Store
+
+# creds
+.env
