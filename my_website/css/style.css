@@ -7,7 +7,6 @@
 
 @charset "UTF-8";
 /*=== MEDIA QUERY ===*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Volkhov:ital@1&display=swap");
 body {
   line-height: 1.65;
   font-family: "Roboto", sans-serif;
@@ -143,7 +142,7 @@ input[type=tel]:focus {
   color: #fff;
 }
 .btn-solid-border:hover {
-  border: 1px solid #F7D6550;
+  border: 1px solid #F7D650;
   background: #7D6550;
 }
 
@@ -435,13 +434,19 @@ input[type=tel]:focus {
   font-size: 10px;
 }
 .commonSelect select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  -webkit-appearance: none; /* Removes default dropdown arrow (Safari/Chrome) */
+  -moz-appearance: none;    /* Removes default dropdown arrow (Firefox) */
+  appearance: none;         /* Standard property */
+  
   cursor: pointer;
   border: none;
-  padding: 0;
+  background: transparent;  /* Prevents default gray background */
+  
+  padding: 0.5em 1em;       /* Adds minimal breathing room */
   height: auto;
+  font-size: 1rem;
   color: #555;
+  line-height: 1.4;
 }
 .commonSelect select:focus {
   box-shadow: none;
@@ -2477,9 +2482,13 @@ ul.dropdown-menu li {
 .checkout-form .form-group input {
   border-radius: 0;
   display: block;
-  padding: 6px 10px 5px 100px;
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 100px; /* space for icon or label */
   -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   height: 50px;
 }
 .checkout-form .checkout-country-code .form-group {
@@ -2806,4 +2815,13 @@ section.call-to-action .col-md-12 .block {
 section.call-to-action .btn {
     display: inline-block; /* ensures the button centers */
     margin: 0 auto;
+}
+
+
+
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 10px auto;
 }
