@@ -2144,7 +2144,7 @@ ul.dropdown-menu li {
 }
 
 .bg-1 {
-  background-image: url("../images/call-to-action-bg.jpg");
+  background-color: #CFCBD3;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
