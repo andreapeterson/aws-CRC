@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
   <!-- Slick CSS -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Volkhov:ital@1&display=swap" rel="stylesheet"/>
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -145,26 +147,28 @@
     <div class="row">
       <div class="col-12 text-center">
         <h2 class="section-subtitle"><FONT COLOR="black">MY RECENT WORKS  </FONT></h2>
-        <p> <style="background: #CFCBD3"><FONT COLOR=black> While on my learning journey, I showcase the projects I have made, ranging from Python-centric content to projects hosted in AWS.</FONT></mark>
+        <p style="color: black;">
+          While on my learning journey, I showcase the projects I have made, ranging from Python-centric content to projects hosted in AWS.
         </p>
         <a href="portfolio.html" class="btn btn-view-works">View Works</a>
       </div>
     </div>
   </div>
 </section>
-
 <!-- Service Start -->
 <section class="service">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
         <div class="section-title">
-          <h2><FONT COLOR=#000000>Professional Skillset</FONT></h2>
-          <p><FONT COLOR=#000000>Soft Skills (from CliftonStrengths) & Hard Skills</FONT></p>
+          <h2 style="color:#000000;">Professional Skillset</h2>
+          <p style="color:#000000;">Soft Skills (from CliftonStrengths) & Hard Skills</p>
         </div>
       </div>
     </div>
+
     <div class="row">
+      <!-- Soft Skills -->
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
           <i class="icon ion-flag"></i>
@@ -173,8 +177,8 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-          <i class="ion-heart"></i>
-          <h4> Harmony</h4>
+          <i class="icon ion-heart"></i>
+          <h4>Harmony</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
@@ -189,62 +193,70 @@
           <h4>Positivity</h4>
         </div>
       </div>
+
+      <!-- Tech Skills -->
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-          <ion-icon size="large" src="images/logo/python.svg"></ion-icon>
+          <img src="images/logo/python.svg"class="tech-icon">
           <h4>Python</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-          <ion-icon size="large" src="images/logo/linux.svg"></ion-icon>
+          <img src="images/logo/linux.svg"class="tech-icon">
           <h4>Linux</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-            <ion-icon size="large" src="images/logo/aws.svg"></ion-icon>
+          <img src="images/logo/aws.svg"class="tech-icon">
           <h4>AWS Cloud</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-            <ion-icon size="large" src="images/logo/terra.svg"></ion-icon>
+          <img src="images/logo/terra.svg"class="tech-icon">
           <h4>Terraform</h4>
         </div>
       </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-          <ion-icon size="large" src="images/logo/docker.svg"></ion-icon>
+          <img src="images/logo/docker.svg"class="tech-icon">
           <h4>Docker</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-          <ion-icon size="large" src="images/logo/kubernetes.svg"></ion-icon>
+          <img src="images/logo/kubernetes.svg"class="tech-icon">
           <h4>Kubernetes</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-            <ion-icon size="large" src="images/logo/gitops.svg"></ion-icon>
-          <h4>Gitops</h4>
+          <img src="images/logo/gitops.svg"class="tech-icon">
+          <h4>GitOps</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="service-item">
-            <ion-icon size="large" src="images/logo/ansible.svg"></ion-icon>
+          <img src="images/logo/ansible.svg"class="tech-icon">
           <h4>Ansible</h4>
         </div>
       </div>
     </div>
 
-      <div class="tech-logo-wrapper text-center">
+    <!-- Logos (Snowflake & Databricks) -->
+    <div class="tech-logo-wrapper text-center mt-4">
       <img class="tech-logo" src="images/logo/snowflake.png" alt="Snowflake">
       <img class="tech-logo" src="images/logo/databricks-1.png" alt="Databricks">
     </div>
   </div>
 </section>
+
+<!-- Ionicons JS (needed for <ion-icon src="…"> to render) -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.2/dist/ionicons/ionicons.js"></script>
+
 
 <!-- Call to action Start -->
 
