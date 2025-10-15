@@ -22,116 +22,171 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* AGGRESSIVE IMAGE SIZE FIXES */
+/* DEBUG: Add a visible border to see if CSS is loading */
+body::before {
+  content: "CSS LOADED - PRODUCTION FIXES ACTIVE";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: red;
+  color: white;
+  padding: 5px;
+  z-index: 9999;
+  font-size: 12px;
+}
+
+/* PRODUCTION-SPECIFIC FIXES - BALANCED APPROACH */
+
+/* Ensure all images are responsive but not tiny */
 img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Force all portfolio images to be small */
-.portfolio-item img,
-.portfolio-item img.me {
-  width: 100% !important;
-  height: 200px !important;
-  max-height: 200px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
+/* Portfolio images - reasonable size */
+.portfolio-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Force about images to be small */
+/* About section images - reasonable size */
 .about .about-img img,
 .about-image {
-  width: 200px !important;
-  max-width: 200px !important;
-  height: auto !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
-  margin: 0 auto !important;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Force tech logos to be visible and small */
+/* Tech icons - visible and reasonable size */
 .tech-icon {
-  width: 50px !important;
-  height: 50px !important;
-  max-width: 50px !important;
-  max-height: 50px !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto 10px auto !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px auto;
 }
 
-/* Force service items to be visible */
+/* Service items - ensure visibility */
 .service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+/* Target the specific service section structure */
+section.service .service-item {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  min-height: 120px !important;
-  padding: 20px 10px !important;
+  min-height: 150px !important;
+  padding: 20px 15px !important;
+  text-align: center !important;
   visibility: visible !important;
   opacity: 1 !important;
-  background: transparent !important;
 }
 
-/* Force navigation to center */
+/* Ensure service item icons and text are visible */
+section.service .service-item i,
+section.service .service-item img,
+section.service .service-item h4,
+section.service .service-item p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Navigation centering */
 .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Target the specific navigation structure */
+header.navigation .navbar .navbar-nav {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
   margin: 0 auto !important;
+  padding-top: 10px !important;
 }
 
-/* Mobile responsive fixes */
-@media (max-width: 768px) {
-  .portfolio-item img,
-  .portfolio-item img.me {
-    height: 150px !important;
-    max-height: 150px !important;
+/* Ensure navigation items are properly spaced */
+header.navigation .navbar .navbar-nav .nav-item {
+  margin: 0 5px !important;
+}
+
+header.navigation .navbar .navbar-nav .nav-link {
+  padding: 10px 15px !important;
+  display: block !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .portfolio-item img {
+    height: 250px;
   }
   
   .about .about-img img,
   .about-image {
-    width: 150px !important;
-    max-width: 150px !important;
+    width: 250px;
   }
   
   .tech-icon {
-    width: 40px !important;
-    height: 40px !important;
-    max-width: 40px !important;
-    max-height: 40px !important;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-item img {
+    height: 200px;
+  }
+  
+  .about .about-img img,
+  .about-image {
+    width: 200px;
+  }
+  
+  .tech-icon {
+    width: 60px;
+    height: 60px;
   }
   
   .service-item {
-    min-height: 100px !important;
-    padding: 15px 5px !important;
+    min-height: 120px;
+    padding: 15px 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .portfolio-item img,
-  .portfolio-item img.me {
-    height: 120px !important;
-    max-height: 120px !important;
+  .portfolio-item img {
+    height: 180px;
   }
   
   .about .about-img img,
   .about-image {
-    width: 120px !important;
-    max-width: 120px !important;
+    width: 150px;
   }
   
   .tech-icon {
-    width: 35px !important;
-    height: 35px !important;
-    max-width: 35px !important;
-    max-height: 35px !important;
+    width: 50px;
+    height: 50px;
   }
 }
 
