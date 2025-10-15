@@ -2756,67 +2756,67 @@ ion-icon {
   height: auto; /* Maintain aspect ratio */
 }
 
-/* ----------------------------------------------------------------
-   Centering Fixes
-   -------------------
-   Tweaks to make the site layout look properly centered:
-   - Keeps main content and page wrappers aligned
-   - Fixes row spacing issues from Bootstrap layout
-   - Centers the footer text and menu links
-   - Centers the "Get In Touch" section and button
-   Added these overrides to fix layout shifts without touching
-   the rest of the theme styles.
----------------------------------------------------------------- */
 
-/* Ensure main wrapper centers all content */
-body, html {
+html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-size: 16px;    /* ensure consistent base font size */
 }
 
 .container, .site, #page, main {
-  max-width: 1200px;  /* adjust for your theme */
+  max-width: 1200px;  /* max width for large screens */
   width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  float: none !important;
-  text-align: left; /* reset in case something else changed it */
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  text-align: left;   /* reset alignment */
 }
 
-/* Fix rows if they are stretching or offset incorrectly */
 .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
-/* Center footer content */
-footer.footer .col-md-12 {
-    text-align: center;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+footer.footer {
+  text-align: center;
 }
 
 footer.footer .footer-manu ul {
-    display: inline-block; /* makes the menu itself centerable */
-    padding: 0;
-    margin: 0 auto 10px auto;
-    list-style: none;
+  display: inline-flex;      /* center menu */
+  flex-wrap: wrap;           /* allow wrapping on small screens */
+  justify-content: center;
+  gap: 10px;                 /* spacing between links */
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
 }
 
 footer.footer .footer-manu ul li {
-    display: inline-block;
-    margin: 0 10px;
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 14px; /* control font size */
 }
 
-/* Center Get In Touch section */
+section.call-to-action {
+  text-align: center;
+}
+
 section.call-to-action .col-md-12 .block {
-    text-align: center;
+  text-align: center;
 }
 
 section.call-to-action .btn {
-    display: inline-block; /* ensures the button centers */
-    margin: 0 auto;
+  display: inline-block;
+  margin: 20px auto 0 auto;
 }
-
 
 
 .tech-icon {
@@ -2824,4 +2824,74 @@ section.call-to-action .btn {
   height: 60px;
   display: block;
   margin: 0 auto 10px auto;
+  object-fit: contain;
+}
+
+.service {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.service .service-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 10px;
+  background: transparent;
+  min-height: auto;
+  max-width: 250px;
+  margin: 0 auto 30px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service .service-item i {
+  font-size: 36px;
+  color: #6e819e;
+  margin-bottom: 8px;
+}
+
+.service .service-item img.tech-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.service .service-item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.service .service-item p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 250px;
+}
+
+.service .service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+}
+
+@media (max-width: 992px) {
+  .service {
+    padding: 40px 0;
+  }
+  .service .service-item {
+    padding: 15px 8px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service .service-item {
+    padding: 10px 5px;
+    max-width: 180px;
+  }
 }
