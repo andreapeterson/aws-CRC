@@ -116,24 +116,33 @@ section.service .service-item p {
   margin: 0 auto;
 }
 
-/* Target the specific navigation structure */
-header.navigation .navbar .navbar-nav {
+/* AGGRESSIVE NAVIGATION FIX FOR PRODUCTION */
+header.navigation .navbar .navbar-nav,
+.navigation .navbar .navbar-nav,
+.navbar .navbar-nav {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding-top: 10px !important;
+  flex-wrap: wrap !important;
 }
 
-/* Ensure navigation items are properly spaced */
-header.navigation .navbar .navbar-nav .nav-item {
-  margin: 0 5px !important;
+/* Force navigation items to be centered */
+header.navigation .navbar .navbar-nav .nav-item,
+.navigation .navbar .navbar-nav .nav-item,
+.navbar .navbar-nav .nav-item {
+  margin: 0 10px !important;
+  display: inline-block !important;
 }
 
-header.navigation .navbar .navbar-nav .nav-link {
+header.navigation .navbar .navbar-nav .nav-link,
+.navigation .navbar .navbar-nav .nav-link,
+.navbar .navbar-nav .nav-link {
   padding: 10px 15px !important;
   display: block !important;
+  text-align: center !important;
 }
 
 /* Responsive adjustments */

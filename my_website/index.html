@@ -32,7 +32,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Volkhov:ital@1&display=swap" rel="stylesheet"/>
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20250115">
+  
+  <!-- TEMPORARY PRODUCTION FIX - Remove after CSS file is properly uploaded -->
+  <style>
+    /* Critical fixes for production */
+    .navbar-nav {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+    
+    .navbar-nav .nav-item {
+      margin: 0 10px !important;
+    }
+    
+    .service-item {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 150px !important;
+      padding: 20px 15px !important;
+      text-align: center !important;
+    }
+    
+    .tech-icon {
+      width: 80px !important;
+      height: 80px !important;
+      object-fit: contain !important;
+      display: block !important;
+      margin: 0 auto 15px auto !important;
+    }
+    
+    .portfolio-item img {
+      width: 100% !important;
+      height: 300px !important;
+      object-fit: cover !important;
+    }
+    
+    .about-image {
+      width: 300px !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      margin: 0 auto !important;
+    }
+  </style>
   
 </head>
 
