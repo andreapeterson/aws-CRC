@@ -22,6 +22,119 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+/* AGGRESSIVE IMAGE SIZE FIXES */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Force all portfolio images to be small */
+.portfolio-item img,
+.portfolio-item img.me {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 200px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Force about images to be small */
+.about .about-img img,
+.about-image {
+  width: 200px !important;
+  max-width: 200px !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Force tech logos to be visible and small */
+.tech-icon {
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto 10px auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force service items to be visible */
+.service-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 120px !important;
+  padding: 20px 10px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+/* Force navigation to center */
+.navbar-nav {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .portfolio-item img,
+  .portfolio-item img.me {
+    height: 150px !important;
+    max-height: 150px !important;
+  }
+  
+  .about .about-img img,
+  .about-image {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+  
+  .tech-icon {
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+  }
+  
+  .service-item {
+    min-height: 100px !important;
+    padding: 15px 5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item img,
+  .portfolio-item img.me {
+    height: 120px !important;
+    max-height: 120px !important;
+  }
+  
+  .about .about-img img,
+  .about-image {
+    width: 120px !important;
+    max-width: 120px !important;
+  }
+  
+  .tech-icon {
+    width: 35px !important;
+    height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+  }
+}
+
 /*=== MEDIA QUERY ===*/
 body {
   line-height: 1.65;
