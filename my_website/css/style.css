@@ -6,6 +6,22 @@
  */
 
 @charset "UTF-8";
+
+/* CRITICAL CSS RESET FOR PRODUCTION */
+* {
+  box-sizing: border-box !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
 /*=== MEDIA QUERY ===*/
 body {
   line-height: 1.65;
@@ -693,18 +709,26 @@ header .navbar-default .navbar-nav li a:hover {
   background: none;
   border: 0px;
 }
-.navigation .navbar .navbar-nav {
-  padding-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+/* HIGH SPECIFICITY NAVIGATION RULES */
+.navigation .navbar .navbar-nav,
+header.navigation .navbar .navbar-nav {
+  padding-top: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
+
 @media (max-width: 992px) {
-  .navigation .navbar .navbar-nav {
-    text-align: center;
-    justify-content: center;
-    width: 100%;
+  .navigation .navbar .navbar-nav,
+  header.navigation .navbar .navbar-nav {
+    text-align: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 .navigation .navbar .navbar-nav > li > a {
@@ -907,36 +931,13 @@ ul.dropdown-menu li {
   padding: 90px 0;
 }
 
-/* Service item container */
-.service .service-item {
-  position: relative;
-  padding-bottom: 65px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-}
+/* Service item container - REMOVED CONFLICTING RULES */
 
-/* Icon styling */
-.service .service-item i {
-  font-size: 60px;
-  color: #6e819e;
-}
+/* Icon styling - REMOVED CONFLICTING RULES */
 
-/* Header styling */
-.service .service-item h4 {
-  padding-top: 15px;
-  margin: 0;
-  font-weight: 500;
-  text-transform: uppercase;
-}
+/* Header styling - REMOVED CONFLICTING RULES */
 
-/* Paragraph styling */
-.service .service-item p {
-  padding-top: 10px;
-  margin: 0;
-}
+/* Paragraph styling - REMOVED CONFLICTING RULES */
 
 /* Snowflake Image */
 .service .snowflake {
@@ -1107,8 +1108,11 @@ ul.dropdown-menu li {
   padding: 0;
 }
 .portfolio-item img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
 }
 .portfolio-item:hover .portfolio-hover {
   visibility: visible;
@@ -2938,48 +2942,59 @@ section.call-to-action .btn {
   padding: 60px 0;
 }
 
-.service .service-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 10px;
-  background: transparent;
-  min-height: 120px;
-  max-width: 250px;
-  margin: 0 auto 30px auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  visibility: visible;
-  opacity: 1;
+/* HIGH SPECIFICITY SERVICE ITEM RULES */
+.service .service-item,
+section.service .service-item {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  padding: 20px 10px !important;
+  background: transparent !important;
+  min-height: 120px !important;
+  max-width: 250px !important;
+  margin: 0 auto 30px auto !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  padding-bottom: 20px !important;
 }
 
-.service .service-item i {
-  font-size: 36px;
-  color: #6e819e;
-  margin-bottom: 8px;
+/* HIGH SPECIFICITY ICON AND TEXT RULES */
+.service .service-item i,
+section.service .service-item i {
+  font-size: 36px !important;
+  color: #6e819e !important;
+  margin-bottom: 8px !important;
 }
 
-.service .service-item img.tech-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
+.service .service-item img.tech-icon,
+section.service .service-item img.tech-icon {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain !important;
+  margin-bottom: 10px !important;
 }
 
-.service .service-item h4 {
-  font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 5px 0;
+.service .service-item h4,
+section.service .service-item h4 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  margin: 5px 0 !important;
+  padding-top: 0 !important;
 }
 
-.service .service-item p {
-  font-size: 13px;
-  color: #666;
-  margin: 0;
-  line-height: 1.5;
-  max-width: 250px;
+.service .service-item p,
+section.service .service-item p {
+  font-size: 13px !important;
+  color: #666 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+  max-width: 250px !important;
+  padding-top: 0 !important;
 }
 
 .service .service-item:hover {
