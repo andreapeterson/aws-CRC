@@ -695,10 +695,16 @@ header .navbar-default .navbar-nav li a:hover {
 }
 .navigation .navbar .navbar-nav {
   padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 @media (max-width: 992px) {
   .navigation .navbar .navbar-nav {
     text-align: center;
+    justify-content: center;
+    width: 100%;
   }
 }
 .navigation .navbar .navbar-nav > li > a {
@@ -2747,8 +2753,23 @@ ion-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px; /* Space between logos */
+  gap: 50px; /* Reduced space between logos */
   margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .tech-logo-wrapper {
+    gap: 30px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-logo-wrapper {
+    gap: 20px;
+    flex-direction: column;
+  }
 }
 
 .tech-logo {
@@ -2763,6 +2784,18 @@ html, body {
   padding: 0;
   overflow-x: hidden; /* prevent horizontal scroll */
   font-size: 16px;    /* ensure consistent base font size */
+  box-sizing: border-box;
+}
+
+/* Ensure all elements use border-box */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Fix for potential layout issues */
+body {
+  position: relative;
+  min-height: 100vh;
 }
 
 .container, .site, #page, main {
@@ -2772,6 +2805,25 @@ html, body {
   margin-right: auto;
   float: none;
   text-align: left;   /* reset alignment */
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+/* Ensure proper container behavior on all screen sizes */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .row {
@@ -2783,6 +2835,60 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Fix for portfolio images */
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Fix for about section images */
+.about .about-img img {
+  max-width: 100%;
+  height: auto;
+  width: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Fix for tech logos */
+.tech-logo {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive image fixes */
+@media (max-width: 768px) {
+  .portfolio-item img {
+    height: 200px;
+  }
+  
+  .about .about-img img {
+    width: 200px;
+  }
+  
+  .tech-logo {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item img {
+    height: 180px;
+  }
+  
+  .about .about-img img {
+    width: 100%;
+    max-width: 180px;
+  }
+  
+  .tech-logo {
+    max-width: 120px;
+  }
 }
 
 footer.footer {
@@ -2840,10 +2946,12 @@ section.call-to-action .btn {
   align-items: center;
   padding: 20px 10px;
   background: transparent;
-  min-height: auto;
+  min-height: 120px;
   max-width: 250px;
   margin: 0 auto 30px auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  visibility: visible;
+  opacity: 1;
 }
 
 .service .service-item i {
@@ -2893,5 +3001,60 @@ section.call-to-action .btn {
   .service .service-item {
     padding: 10px 5px;
     max-width: 180px;
+    min-height: 100px;
   }
+  
+  .service .service-item h4 {
+    font-size: 13px;
+  }
+  
+  .service .service-item p {
+    font-size: 12px;
+  }
+}
+
+/* Additional responsive fixes for service items */
+@media (max-width: 1200px) {
+  .service .service-item {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service .service-item {
+    max-width: 200px;
+    min-height: 110px;
+  }
+}
+/* Footer general centering */
+footer.footer .col-md-12 {
+    text-align: center; /* center all child elements */
+}
+
+/* Counter number */
+footer.footer .counter-number {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Footer menu */
+footer.footer .footer-manu ul {
+    display: inline-flex;      /* horizontal layout */
+    flex-wrap: wrap;           /* wrap on small screens */
+    justify-content: center;
+    gap: 10px;                 /* spacing between links */
+    padding: 0;
+    margin: 0 auto 10px auto;  /* center the list */
+    list-style: none;
+}
+
+footer.footer .footer-manu ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* Copyright text */
+footer.footer .copyright {
+    margin: 0;
+    text-align: center;        /* ensure text is centered */
 }
