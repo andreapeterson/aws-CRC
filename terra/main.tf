@@ -50,14 +50,14 @@ resource "aws_s3_object" "website_contents" {
   for_each     = fileset("../my_website/", "**/*")
   bucket       = data.aws_s3_bucket.main_bucket.id
   key          = each.key
-  source       = "../my_website/${each.value}"
+  source       = "../my_website/${each.key}"
   content_type = lookup(
     local.content_type_map,
-    length(split(".", each.value)) > 1 ? split(".", each.value)[1] : "",
+    length(split(".", each.key)) > 1 ? split(".", each.key)[1] : "",
     "text/plain"
   )
   content_encoding = null
-  etag         = filemd5("../my_website/${each.value}")
+  etag         = filemd5("../my_website/${each.key}")
 }
 
 ##Bucket ACL
@@ -107,7 +107,28 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     min_ttl     = 1
     default_ttl = 86400
     max_ttl     = 31536000
-    compress    = true
+    compress    = false
+  }
+
+  # Specific cache behavior for CSS files
+  ordered_cache_behavior {
+    path_pattern     = "css/*"
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = local.s3_origin_id
+    
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+    
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = false
+    min_ttl               = 0
+    default_ttl           = 3600
+    max_ttl               = 86400
   }
 
   price_class = "PriceClass_100" #North America & Europe to save costs
