@@ -56,6 +56,7 @@ resource "aws_s3_object" "website_contents" {
     length(split(".", each.value)) > 1 ? split(".", each.value)[1] : "",
     "text/plain"
   )
+  content_encoding = null
   etag         = filemd5("../my_website/${each.value}")
 }
 
