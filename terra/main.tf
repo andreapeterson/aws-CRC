@@ -112,13 +112,14 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   # Specific cache behavior for CSS files
   ordered_cache_behavior {
-    path_pattern     = "css/*"
+    path_pattern     = "*.css"
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = local.s3_origin_id
     
     forwarded_values {
       query_string = false
+      headers      = ["Content-Type", "Content-Encoding", "Accept-Encoding", "Cache-Control"]
       cookies {
         forward = "none"
       }
@@ -137,7 +138,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cloudfront_default_certificate = false
     acm_certificate_arn            = "arn:aws:acm:us-east-1:721286014382:certificate/bffe6ff1-6fc7-4406-8cec-e43624ebc53a"
     ssl_support_method             = "sni-only"
-    minimum_protocol_version       = "TLSv1"
+    minimum_protocol_version       = "TLSv1.2_2021"
   }
   restrictions {
     geo_restriction {
