@@ -53,7 +53,7 @@ resource "aws_s3_object" "website_contents" {
   source       = "../my_website/${each.key}"
   content_type = lookup(
     local.content_type_map,
-    length(split(".", each.key)) > 1 ? split(".", each.key)[1] : "",
+    length(split(".", each.key)) > 1 ? element(split(".", each.key), length(split(".", each.key)) - 1) : "",
     "text/plain"
   )
   content_encoding = null
