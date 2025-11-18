@@ -44,6 +44,11 @@ locals {
     "jpg"  = "image/jpeg",
     "png"  = "image/png",
     "json" = "text/json"
+    svg   = "image/svg+xml"
+    ico   = "image/x-icon"
+    woff  = "font/woff"
+    woff2 = "font/woff2"
+    ttf   = "font/ttf"
   }
 }
 resource "aws_s3_object" "website_contents" {
