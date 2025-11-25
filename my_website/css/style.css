@@ -3235,3 +3235,15 @@ footer.footer .copyright {
     margin: 0;
     text-align: center;        /* ensure text is centered */
 }
+
+.strava-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.strava-badge img {
+  height: 60px;        /* bigger */
+  opacity: 1;          /* keep orange full */
+  filter: none;        /* remove grayscale if applied */
+}

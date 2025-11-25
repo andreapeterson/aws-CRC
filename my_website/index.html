@@ -34,54 +34,6 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css?v=20250115">
   
-  <!-- TEMPORARY PRODUCTION FIX - Remove after CSS file is properly uploaded -->
-  <style>
-    /* Critical fixes for production */
-    .navbar-nav {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-    }
-    
-    .navbar-nav .nav-item {
-      margin: 0 10px !important;
-    }
-    
-    .service-item {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      min-height: 150px !important;
-      padding: 20px 15px !important;
-      text-align: center !important;
-    }
-    
-    .tech-icon {
-      width: 80px !important;
-      height: 80px !important;
-      object-fit: contain !important;
-      display: block !important;
-      margin: 0 auto 15px auto !important;
-    }
-    
-    .portfolio-item img {
-      width: 100% !important;
-      height: 300px !important;
-      object-fit: cover !important;
-    }
-    
-    .about-image {
-      width: 300px !important;
-      max-width: 100% !important;
-      height: auto !important;
-      display: block !important;
-      margin: 0 auto !important;
-    }
-  </style>
-  
 </head>
 
 
@@ -111,8 +63,6 @@
 								<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio <span class="ion-ios-arrow-down"></span></a>
 								<ul class="dropdown-menu" aria-labelledby="dropdown03">
 									<li><a class="dropdown-item @@portfolioFilter" href="portfolio.html">Projects</a></li>
-									<li><a class="dropdown-item @@portfolioSingle" href="portfolio-single.html" target="_blank">Resume</a></li>
-
 									<li class="dropdown dropdown-submenu dropright">
 										<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button"
 											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Badges</a>
@@ -169,34 +119,33 @@
 			<div class="col-md-7">
 				<div class="block">
 					<div class="section-title">
-						<h2>A Little Bit About<FONT COLOR=#d0aebc> Me</FONT></h2>
-						<p>Associate Field Engineer at ALTR </p>
+						<h2>A Little Bit About <span style="color:#d0aebc;">Me</span></h2>
+						<p>Field Engineer at ALTR</p>
 					</div>
-                    <p>In the summer of 2024, I interned at ALTR, where I quickly found myself immersed in the world of <FONT COLOR=#d0aebc>data security</FONT> and surrounded by such a smart, like-minded, and driven team. The hands-on experience during my internship solidified my passion for tech and data-driven solutions, which led me to transition into my current role as an Associate Field Engineer.</p>
-                    <p>Before joining ALTR, my background isn't reminiscent of the typical tech background as it wasn't until my senior year of college where I discovered my passion. I graduated from the <FONT COLOR=#d0aebc>University of Florida</FONT> with a <FONT COLOR=#d0aebc>Bachelor of Science in Animal Sciences.</FONT> Along the way, I added an <FONT COLOR=#d0aebc>Economics minor</FONT> to my academic achievements. It wasn't until my last semester, in a class called 'Economic Analysis of Data', that I first encountered the world of programming hands-on. Initially unfamiliar with tools like <FONT COLOR=#d0aebc>R</FONT>,  I soon found myself intrigued by the potential of data and analytics, leading me to first explore <FONT COLOR=#d0aebc>Python</FONT> outside of class.</p>
-                    <p>A year after graduation, I came into my internship equipped with a year's worth of self-dedicated study in <FONT COLOR=#d0aebc>AWS, Linux, Terraform, Docker etc</FONT>. This foundation, combined with my enthusiasm and dedication, allowed me to hit the ground running at ALTR and transition smoothly into a full-time engineering role. It is here where I continue to grow and contribute to cutting-edge projects.</p>
+                    <p>In the summer of 2024, I interned at ALTR, where I was introduced to the world of <span style="color:#d0aebc;">security-focused engineering</span> and had the opportunity to work alongside a talented, motivated team. The hands-on experience confirmed how much I enjoy building and solving technical problems, which led to my transition into a full-time Field Engineer role.</p>
+                    <p>My path into tech wasn’t traditional. I graduated from the <span style="color:#d0aebc;">University of Florida</span> with a <span style="color:#d0aebc;">B.S. in Animal Sciences</span> and an <span style="color:#d0aebc;">Economics minor</span>. During my final semester, a course that introduced programming sparked my interest in technology. Starting with <span style="color:#d0aebc;">R</span> and later teaching myself <span style="color:#d0aebc;">Python</span>, I discovered how much I enjoyed building tools and working with systems.</p>
+                    <p>A year after graduating, I entered my internship with a self-built foundation in <span style="color:#d0aebc;">AWS, Linux, Terraform, and Docker</span>. That groundwork, paired with curiosity and drive, helped me contribute quickly at ALTR and grow into my current engineering role, where I continue expanding my skills in cloud architecture, automation, and security.</p>
+                    <p>This website began as a personal sandbox for early projects and still gets occasional updates—like the recent Strava API integration—as new ideas come to me.</p>
 				</div>
 			</div><!-- .col-md-7 close -->
+
 			<div class="col-md-5">
 				<div class="block">
 					<img class="about-image" src="images/annag-0069.jpg" alt="Image of myself">
 				</div>
-			</div><!-- .col-md-5 close -->
-            <div class="col-md-5">
-				<div class="block">
-					<img class="about-image" src="images/field_team.png" alt="Image of Field Engineer team at ALTR">
-				</div>
-		</div>
+			</div>
+		</div><!-- .row close -->
 	</div>
 </section>
+
 
 <section class="feature bg-2">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="section-subtitle"><FONT COLOR="black">MY RECENT WORKS  </FONT></h2>
+        <h2 class="section-subtitle"><FONT COLOR="black">MY WORKS  </FONT></h2>
         <p style="color: black;">
-          While on my learning journey, I showcase the projects I have made, ranging from Python-centric content to projects hosted in AWS.
+          While I was learning, I showcased the projects I built, ranging from Python-centric content to projects hosted in AWS.
         </p>
         <a href="portfolio.html" class="btn btn-view-works">View Works</a>
       </div>
@@ -322,21 +271,23 @@
 </section>
 
 <!-- Content Start -->
-<section class="testimonial">
+<section class="testimonial strava-metrics">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="section-title text-center">
-          <h2>Fun Facts About Me</h2>
-          <p>For the year of 2025 so far:</p>
-            <p>(Pulled from Strava's Api)</p>
+          <h2>Activity Snapshot</h2>
+          <p>2025 activity totals pulled live through a small serverless API I built.</p>
         </div>
       </div>
     </div>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <div class="block">
-          <ul class="counter-box clearfix">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="block text-center">
+          <div class="strava-badge">
+            <img src="images/logo/strava.png" alt="Strava logo">
+          </div>
+          <ul class="counter-box clearfix justify-content-center">
             <li>
               <div class="counter-item">
                 <ion-icon name="reorder-three-outline" size="large"></ion-icon>
@@ -346,7 +297,7 @@
             </li>
             <li>
               <div class="counter-item">
-                 <ion-icon name="reorder-two-outline" size="large"></ion-icon>
+                <ion-icon name="reorder-two-outline" size="large"></ion-icon>
                 <h4 class="count" id="milesWalked">0</h4>
                 <span>Miles Walked</span>
               </div>
@@ -360,7 +311,7 @@
             </li>
             <li>
               <div class="counter-item">
-                  <ion-icon name="trending-up-outline" size="large"></ion-icon>
+                <ion-icon name="trending-up-outline" size="large"></ion-icon>
                 <h4 class="count" id="elevationGain">0</h4>
                 <span>Elevation Gain (ft)</span>
               </div>
@@ -368,31 +319,10 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-5 col-md-offset-1">
-        <div class="testimonial-carousel text-center">
-          <div class="testimonial-slider owl-carousel">
-            <div>
-              <i class="ion-quote"></i>
-              <p>"Who was going to tell me coding is so fun?"</p>
-              <div class="user">
-                <img src="images/item-img1.jpg" alt="Andrea Peterson">
-                <p><span>Andrea Peterson</span> </p>
-              </div>
-            </div>
-            <div>
-              <i class="ion-quote"></i>
-              <p>"I wholeheartedly believe that the possibilities in this lifetime are endless. Yet, it's your unwavering grit that stands as the sole force between you and your goals."</p>
-              <div class="user">
-                <img src="images/item-img1.jpg" alt="Andrea Peterson">
-                <p><span>Andrea Peterson</span> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
 
 <!-- footer Start -->
 <footer class="footer">
