@@ -14,3 +14,5 @@
 
 # local resume page (managed outside the site now)
 my_website/portfolio-single.html
+
+my_website/strava/*
