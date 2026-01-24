@@ -13,7 +13,7 @@ REFRESH_TOKEN = os.getenv("STRAVA_REFRESH_TOKEN")
 STRAVA_OAUTH_URL = "https://www.strava.com/oauth/token"
 STRAVA_ACTIVITIES = "https://www.strava.com/api/v3/athlete/activities"
 
-start_of_year = int(datetime(2025, 1, 1).timestamp())
+start_of_year = int(datetime(2026, 1, 1).timestamp())
 
 def refresh_access_token():
     response = requests.post(STRAVA_OAUTH_URL, data={
