@@ -1,5 +1,12 @@
 name: 'Terraform Deploy to AWS'
 
+permissions:
+  contents: read
+
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
   push:
     branches:
@@ -28,16 +35,23 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test visitor counter
+        run: python -m unittest discover -s . -p 'test_*.py'
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform init
         id: init
-        run: terraform init -backend-config="bucket"=${{ env.BUCKET_TF_STATE }}
+        run: terraform init -backend-config="bucket=${BUCKET_TF_STATE}"
 
       - name: Terraform fmt
         run: terraform fmt -check
-        continue-on-error: true
 
       - name: Terraform validate
         id: validate
@@ -45,7 +59,7 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -no-color -input=false -out planfile #storing output in this file and using it to apply changes - avoids bug of parallel execution
+        run: terraform plan -no-color -input=false -out=planfile
         continue-on-error: true
 
       - name: Terraform plan status - fail
@@ -56,3 +70,9 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false -parallelism=1 planfile
 
+      - name: Invalidate CloudFront cache
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "$(terraform output -raw cloudfront_distribution_id)" \
+            --paths '/*'

@@ -11,6 +11,15 @@
 
 # creds
 .env
+.env.*
+!.env.example
+
+# Generated build and test artifacts
+*.bak
+__pycache__/
+*.py[cod]
+terra/lambda_function.zip
+terra/planfile
 
 # local resume page (managed outside the site now)
 my_website/portfolio-single.html
