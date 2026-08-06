@@ -1,36 +1,62 @@
-const counter = document.querySelector(".counter-number"); //selects this element from the index.html file
-async function updateCounter() {
-    let response = await fetch("https://mgkp5gmdeq2zh2vd6kntspfjn40tdtvo.lambda-url.us-east-1.on.aws/");
-    let data = await response.json();
-    counter.innerHTML = `Website View Count: ${data}`;
-} //this function does a fetch request to the function url and then stores it as a variable named data. then it updates counter-number in the index.html to say the views
-updateCounter();
+const header = document.querySelector('.site-header');
+const menuButton = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
 
+function closeMenu() {
+  if (!menuButton || !siteNav) return;
+  menuButton.setAttribute('aria-expanded', 'false');
+  siteNav.classList.remove('open');
+  document.body.classList.remove('menu-open');
+}
 
+menuButton?.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!isOpen));
+  siteNav.classList.toggle('open', !isOpen);
+  document.body.classList.toggle('menu-open', !isOpen);
+});
 
+siteNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
-const apiUrl = 'https://andrea-strava-api-4730c4f3ed9b.herokuapp.com/strava-metrics';
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('scrolled', window.scrollY > 12);
+}, { passive: true });
 
-async function updateMetrics() {
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 })
+  : null;
+
+document.querySelectorAll('.reveal').forEach((element) => {
+  if (revealObserver) revealObserver.observe(element);
+  else element.classList.add('visible');
+});
+
+const visitorCounters = document.querySelectorAll('.counter-number');
+
+async function updateVisitorCount() {
+  if (!visitorCounters.length) return;
   try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) throw new Error('Network response was not ok');
-    const data = await response.json();
-
-    document.getElementById('milesRan').textContent = data.milesRan ?? 0;
-    document.getElementById('milesWalked').textContent = data.milesWalked ?? 0;
-    document.getElementById('totalActivityMinutes').textContent = data.totalActivityMinutes ?? 0;
-    document.getElementById('elevationGain').textContent = data.elevationGain ?? 0;
+    const response = await fetch('https://mgkp5gmdeq2zh2vd6kntspfjn40tdtvo.lambda-url.us-east-1.on.aws/');
+    if (!response.ok) throw new Error(`Visitor API returned ${response.status}`);
+    const count = await response.json();
+    visitorCounters.forEach((counter) => {
+      counter.textContent = Number(count).toLocaleString();
+    });
   } catch (error) {
-    console.error('Error fetching metrics:', error);
+    visitorCounters.forEach((counter) => {
+      counter.textContent = 'Live on production';
+    });
+    console.info('Visitor count unavailable:', error);
   }
 }
 
-window.addEventListener('DOMContentLoaded', updateMetrics);
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
-
-
-
-
-
-
+updateVisitorCount();
