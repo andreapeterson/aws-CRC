@@ -20,6 +20,14 @@
   <title>Andrea Peterson | Field Engineer, Software &amp; Data Systems</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="css/portfolio.css?v=20260806b">
+  <script>
+    if (window.location.pathname.endsWith('/index.html')) {
+      const destination = window.location.hash === '#about'
+        ? '/about.html'
+        : `/${window.location.search}${window.location.hash}`;
+      window.location.replace(destination);
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
