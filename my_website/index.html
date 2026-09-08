@@ -19,7 +19,7 @@
   <link rel="canonical" href="https://andrea-peterson.com/">
   <title>Andrea Peterson | Field Engineer, Software &amp; Data Systems</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="stylesheet" href="css/portfolio.css?v=20260806b">
+  <link rel="stylesheet" href="css/portfolio.css?v=20260907a">
   <script>
     if (window.location.pathname.endsWith('/index.html')) {
       const destination = window.location.hash === '#about'
@@ -130,11 +130,18 @@
           <p class="card-links"><a href="https://github.com/altrsoftware/altr-mcp-server/pulls?q=is%3Apr+is%3Amerged+author%3Aaltr-andrea" target="_blank" rel="noreferrer">Merged contributions ↗</a><a href="https://github.com/altrsoftware/altr-mcp-server" target="_blank" rel="noreferrer">Repository ↗</a></p>
         </article>
         <article>
-          <p class="project-label">Draft pull request · Not merged</p>
+          <p class="project-label">Open source · Merged contribution</p>
           <h3>Service-status endpoint for Jolpica F1</h3>
-          <p>A draft contribution to the community Formula 1 API with dependency checks, degraded-state handling, and unit tests.</p>
+          <p>An operational-health endpoint for the community Formula 1 API, with database and cache dependency checks, degraded-state handling, and unit tests.</p>
           <p class="project-tech">Python · Django · REST APIs</p>
-          <a href="https://github.com/jolpica/jolpica-f1/pull/389" target="_blank" rel="noreferrer">View pull request ↗</a>
+          <a href="https://github.com/jolpica/jolpica-f1/pull/389" target="_blank" rel="noreferrer">Merged pull request ↗</a>
+        </article>
+        <article>
+          <p class="project-label">Open source · Merged contribution</p>
+          <h3>Startup probes for Open Data Hub notebooks</h3>
+          <p>A reliability fix for Minimal and Data Science Jupyter workbenches that separates slow-startup tolerance from ongoing liveness and readiness checks.</p>
+          <p class="project-tech">Kubernetes · Kustomize · YAML · Testing</p>
+          <a href="https://github.com/opendatahub-io/notebooks/pull/4324" target="_blank" rel="noreferrer">Merged pull request ↗</a>
         </article>
       </div>
       <p class="center-link"><a href="portfolio.html">View earlier projects →</a></p>
@@ -152,9 +159,28 @@
       </div>
     </section>
 
+    <section class="activity-section" aria-labelledby="activity-title">
+      <div class="shell activity-layout">
+        <div class="activity-intro">
+          <img src="images/logo/strava.png" alt="Strava">
+          <p class="classic-eyebrow">Live API integration</p>
+          <h2 id="activity-title">Strava activity snapshot</h2>
+          <p><span id="activity-year">2026</span> totals pulled from Strava through a Python service that refreshes OAuth credentials and aggregates my activities.</p>
+          <p class="project-tech">Python · Flask · OAuth 2.0 · REST API · Heroku</p>
+          <p class="activity-status" id="activity-status" role="status" aria-live="polite">Loading latest activity…</p>
+        </div>
+        <dl class="activity-metrics" aria-label="Year-to-date Strava activity totals">
+          <div><dt>Miles ran</dt><dd data-strava-metric="milesRan">—</dd></div>
+          <div><dt>Miles walked</dt><dd data-strava-metric="milesWalked">—</dd></div>
+          <div><dt>Activity minutes</dt><dd data-strava-metric="totalActivityMinutes">—</dd></div>
+          <div><dt>Elevation gain</dt><dd data-strava-metric="elevationGain">—</dd><span>feet</span></div>
+        </dl>
+      </div>
+    </section>
+
     <section class="personal-strip shell">
       <div><img src="images/logo/strava.png" alt="Strava"><p class="classic-eyebrow">Outside work</p><h2>Running keeps me moving.</h2></div>
-      <div><p>I also read, hike, golf, follow Formula 1, and occasionally turn those interests into small software projects&mdash;including a Strava API integration for this site.</p><a href="about.html">A little more about me →</a></div>
+      <div><p>I also read, hike, golf, follow Formula 1, and occasionally turn those interests into small software projects&mdash;like the live Strava integration above.</p><a href="about.html">A little more about me →</a></div>
     </section>
 
     <section class="classic-contact">
@@ -170,6 +196,6 @@
       <p>&copy; <span id="year">2026</span> Andrea Peterson</p>
     </div>
   </footer>
-  <script src="index.js?v=20260806a"></script>
+  <script src="index.js?v=20260907a"></script>
 </body>
 </html>
