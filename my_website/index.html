@@ -19,7 +19,7 @@
   <link rel="canonical" href="https://andrea-peterson.com/">
   <title>Andrea Peterson | Field Engineer, Software &amp; Data Systems</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="stylesheet" href="css/portfolio.css?v=20260907a">
+  <link rel="stylesheet" href="css/portfolio.css?v=20260908a">
   <script>
     if (window.location.pathname.endsWith('/index.html')) {
       const destination = window.location.hash === '#about'
@@ -163,24 +163,24 @@
       <div class="shell activity-layout">
         <div class="activity-intro">
           <img src="images/logo/strava.png" alt="Strava">
-          <p class="classic-eyebrow">Live API integration</p>
-          <h2 id="activity-title">Strava activity snapshot</h2>
-          <p><span id="activity-year">2026</span> totals pulled from Strava through a Python service that refreshes OAuth credentials and aggregates my activities.</p>
+          <p class="classic-eyebrow">API integration project</p>
+          <h2 id="activity-title">Strava activity dashboard</h2>
+          <p>I built a Python service that authenticated with Strava, fetched my yearly activities, and turned the response into a compact dashboard for this site.</p>
           <p class="project-tech">Python · Flask · OAuth 2.0 · REST API · Heroku</p>
-          <p class="activity-status" id="activity-status" role="status" aria-live="polite">Loading latest activity…</p>
+          <p class="activity-note">The live connection is archived following changes to Strava API access.</p>
         </div>
-        <dl class="activity-metrics" aria-label="Year-to-date Strava activity totals">
-          <div><dt>Miles ran</dt><dd data-strava-metric="milesRan">—</dd></div>
-          <div><dt>Miles walked</dt><dd data-strava-metric="milesWalked">—</dd></div>
-          <div><dt>Activity minutes</dt><dd data-strava-metric="totalActivityMinutes">—</dd></div>
-          <div><dt>Elevation gain</dt><dd data-strava-metric="elevationGain">—</dd><span>feet</span></div>
-        </dl>
+        <ol class="activity-flow" aria-label="Strava integration workflow">
+          <li><span>01</span><strong>Authenticate</strong><p>Refresh short-lived OAuth credentials on the backend.</p></li>
+          <li><span>02</span><strong>Fetch</strong><p>Request the authenticated athlete&rsquo;s yearly activities.</p></li>
+          <li><span>03</span><strong>Aggregate</strong><p>Calculate running, walking, time, and elevation totals.</p></li>
+          <li><span>04</span><strong>Present</strong><p>Return a small JSON response for the website dashboard.</p></li>
+        </ol>
       </div>
     </section>
 
     <section class="personal-strip shell">
       <div><img src="images/logo/strava.png" alt="Strava"><p class="classic-eyebrow">Outside work</p><h2>Running keeps me moving.</h2></div>
-      <div><p>I also read, hike, golf, follow Formula 1, and occasionally turn those interests into small software projects&mdash;like the live Strava integration above.</p><a href="about.html">A little more about me →</a></div>
+      <div><p>I also read, hike, golf, follow Formula 1, and occasionally turn those interests into small software projects&mdash;like the Strava API integration above.</p><a href="about.html">A little more about me →</a></div>
     </section>
 
     <section class="classic-contact">
@@ -196,6 +196,6 @@
       <p>&copy; <span id="year">2026</span> Andrea Peterson</p>
     </div>
   </footer>
-  <script src="index.js?v=20260907a"></script>
+  <script src="index.js?v=20260908a"></script>
 </body>
 </html>
