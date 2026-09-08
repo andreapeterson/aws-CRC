@@ -56,7 +56,41 @@ async function updateVisitorCount() {
   }
 }
 
+const stravaMetrics = document.querySelectorAll('[data-strava-metric]');
+const activityStatus = document.getElementById('activity-status');
+
+async function updateStravaMetrics() {
+  if (!stravaMetrics.length) return;
+
+  try {
+    const response = await fetch('https://andrea-strava-api-4730c4f3ed9b.herokuapp.com/strava-metrics');
+    if (!response.ok) throw new Error(`Strava API returned ${response.status}`);
+
+    const metrics = await response.json();
+    stravaMetrics.forEach((element) => {
+      const value = Number(metrics[element.dataset.stravaMetric]);
+      if (!Number.isFinite(value)) throw new Error(`Missing ${element.dataset.stravaMetric}`);
+      element.textContent = value.toLocaleString(undefined, { maximumFractionDigits: 1 });
+    });
+
+    if (activityStatus) {
+      activityStatus.textContent = 'Year-to-date totals updated from the Strava API.';
+      activityStatus.dataset.state = 'available';
+    }
+  } catch (error) {
+    if (activityStatus) {
+      activityStatus.textContent = 'Live activity totals are temporarily unavailable.';
+      activityStatus.dataset.state = 'unavailable';
+    }
+    console.info('Strava metrics unavailable:', error);
+  }
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
+const activityYear = document.getElementById('activity-year');
+if (activityYear) activityYear.textContent = new Date().getFullYear();
+
 updateVisitorCount();
+updateStravaMetrics();

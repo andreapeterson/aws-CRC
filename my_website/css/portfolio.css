@@ -105,7 +105,7 @@ img { display: block; max-width: 100%; }
 .contribution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 50px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .contribution-grid article { padding: 36px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; transition: background-color .2s ease; }
 .contribution-grid article:hover { background: #fafbfb; }
-.contribution-grid .contribution-featured { background: #fbf7f9; box-shadow: inset 0 3px 0 var(--accent); }
+.contribution-grid .contribution-featured { grid-column: 1 / -1; background: #fbf7f9; box-shadow: inset 0 3px 0 var(--accent); }
 .contribution-grid article > p:not(.project-label):not(.project-tech) { color: var(--muted); }
 .contribution-grid article > a { color: var(--navy); font-size: 13px; font-weight: 700; }
 .contribution-grid .card-links { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0 0; }
@@ -118,6 +118,22 @@ img { display: block; max-width: 100%; }
 .capability-grid article > span { color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: .08em; }
 .capability-grid h3 { margin: 24px 0 10px; font-size: 18px; line-height: 1.3; }
 .capability-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+.activity-section { padding-block: 90px; color: #fff; background: var(--navy); }
+.activity-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
+.activity-intro > img { width: 72px; margin-bottom: 20px; }
+.activity-intro .classic-eyebrow { color: #d0aebc; }
+.activity-intro h2 { margin: 0; color: #fff; font-size: clamp(34px, 4vw, 48px); line-height: 1.15; letter-spacing: -.035em; }
+.activity-intro > p:not(.classic-eyebrow):not(.project-tech):not(.activity-status) { margin: 18px 0; color: #dbe3e8; }
+.activity-intro .project-tech { color: #c7d4dc; }
+.activity-status { margin: 24px 0 0; color: #dbe3e8; font-size: 12px; }
+.activity-status[data-state="available"] { color: #fff; }
+.activity-status[data-state="unavailable"] { color: #e5cbd7; }
+.activity-metrics { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid rgba(255,255,255,.24); border-left: 1px solid rgba(255,255,255,.24); }
+.activity-metrics > div { position: relative; min-height: 150px; padding: 25px; border-right: 1px solid rgba(255,255,255,.24); border-bottom: 1px solid rgba(255,255,255,.24); }
+.activity-metrics dt { color: #c7d4dc; font-size: 10px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.activity-metrics dd { margin: 20px 0 0; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 5vw, 52px); line-height: 1; }
+.activity-metrics span { position: absolute; right: 25px; bottom: 27px; color: #c7d4dc; font-size: 10px; }
 
 .personal-strip { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: center; padding-block: 70px; }
 .personal-strip img { width: 82px; margin-bottom: 18px; }
@@ -280,6 +296,7 @@ img { display: block; max-width: 100%; }
   .classic-experience { grid-template-columns: 230px 1fr; gap: 48px; }
   .featured-project { grid-template-columns: 1fr 1fr; gap: 38px; padding: 36px; }
   .capability-grid { grid-template-columns: 1fr 1fr; }
+  .activity-layout { gap: 48px; }
   .classic-footer .footer-inner { grid-template-columns: 1fr; }
   .profile-layout { grid-template-columns: 1fr; gap: 0; }
   .profile-sidebar { position: static; min-height: auto; display: grid; grid-template-columns: 110px 1fr; column-gap: 24px; padding-block: 36px; }
@@ -332,6 +349,10 @@ img { display: block; max-width: 100%; }
   .skills-section { padding-block: 70px; }
   .capability-grid { grid-template-columns: 1fr; }
   .capability-grid article { min-height: auto; }
+  .activity-section { padding-block: 70px; }
+  .activity-layout { grid-template-columns: 1fr; gap: 38px; }
+  .activity-metrics > div { min-height: 130px; padding: 22px; }
+  .activity-metrics span { right: 22px; bottom: 23px; }
   .personal-strip { grid-template-columns: 1fr; gap: 34px; padding-block: 60px; }
   .classic-contact > .shell { grid-template-columns: 1fr; gap: 28px; }
   .intro { grid-template-columns: 1fr; gap: 38px; padding-block: 56px; }
